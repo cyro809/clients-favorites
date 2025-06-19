@@ -7,9 +7,10 @@ class Favorite(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     client_id = Column(Integer, ForeignKey('clients.id', ondelete="CASCADE"), nullable=False)
-    product_id = Column(String, nullable=False)
+    product_id = Column(Integer, nullable=False)
     title = Column(String, nullable=False)
     image = Column(String, nullable=False)
     price = Column(Float, nullable=False)
+    rating = Column(Float, nullable=True)
 
     client = relationship("Client", back_populates="favorites")

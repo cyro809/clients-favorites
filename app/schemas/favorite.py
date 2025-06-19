@@ -6,6 +6,7 @@ class FavoriteBase(BaseModel):
     title: str
     image: str
     price: float
+    rating: Optional[float] = None
 
 class FavoriteCreateInput(BaseModel):
     product_id: int

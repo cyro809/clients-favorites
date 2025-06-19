@@ -1,17 +1,19 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.models.favorite import Favorite
-from app.schemas.favorite import FavoriteCreateInput
+from app.schemas.favorite import FavoriteBase
 
-async def add_favorite_product(db: AsyncSession, client_id: int, favorite_input: FavoriteCreateInput):
+async def add_favorite_product(db: AsyncSession, client_id: int, favorite_input: FavoriteBase):
     db_favorite = Favorite(
         client_id=client_id,
         product_id=favorite_input.product_id,
         title=favorite_input.title,
         image=favorite_input.image,
-        price=favorite_input.price
+        price=favorite_input.price,
+        rating=favorite_input.rating
     )
-    await db.add(db_favorite)
+    print(db_favorite.title)
+    db.add(db_favorite)
     await db.commit()
     await db.refresh(db_favorite)
     return db_favorite
