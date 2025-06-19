@@ -1,0 +1,47 @@
+# Byte-compiled / cache / __pycache__ / etc
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+*.egg
+*.log
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Alembic
+alembic/versions/*.pyc
+alembic/versions/__pycache__/
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Docker
+*.env
+*.env.*
+docker-compose.override.yml
+
+# Test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+coverage.xml
+.cache/
+pytest_cache/
+
+# Logs
+*.log
+logs/
