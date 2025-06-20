@@ -1,10 +1,14 @@
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from app.models.client import Client
-from app.schemas.client import ClientCreateInput, ClientUpdateInput
+from app.schemas.client import ClientInputDatabase, ClientUpdateInput
 
-async def create_client(db: AsyncSession, client_input: ClientCreateInput):
-    db_client = Client(name=client_input.name, email=client_input.email)
+async def create_client(db: AsyncSession, client_input: ClientInputDatabase):
+    db_client = Client(
+        name=client_input.name,
+        email=client_input.email,
+        hashed_password=client_input.hashed_password
+    )
     db.add(db_client)
     await db.commit()
     await db.refresh(db_client)

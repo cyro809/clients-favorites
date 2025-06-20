@@ -7,7 +7,10 @@ class ClientBase(BaseModel):
     email: EmailStr
 
 class ClientCreateInput(ClientBase):
-    pass
+    password: str
+
+class ClientInputDatabase(ClientBase):
+    hashed_password: str
 
 class ClientUpdateInput(BaseModel):
     name: Optional[str] = None
