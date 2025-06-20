@@ -69,6 +69,14 @@ Uso Docker Compose para orquestrar containers da API e banco, facilitando desenv
 - Facilita replicação do ambiente, porém adiciona uma camada de complexidade para quem não está familiarizado.
 - Alternativa seria deploy direto no host, menos portável.
 
+## Testes
+
+Infelizmente, tive dificuldades com as configurações do ambiente de testes com a combinação FastAPI + SQLAlchemy Async. Tive problemas de configuração de um banco separado para os testes, a concorrencia na hora de fazer requisições ao banco. Caso queiram olhar, é só ir para a branch chore/tests e lá é possível conferir o setup do pytest.
+
+## Melhorias futuras
+
+Para o futuro, além dos testes unitários e de integração, eu adicionaria logs em pontos críticos, principalmente em fluxos de erros, para facilitar o debug no ambiente de produção. Um ponto que eu estudaria, seria adição de Cache, principalmente para as rotas de obter os dados do cliente e seus favoritos, para evitar requisições ao banco toda hora que é requisitado.
+
 ## Conclusão
 
 Minhas escolhas priorizaram a escalabilidade, desempenho e modernidade da aplicação, com foco em boas práticas de desenvolvimento. Ao mesmo tempo, reconheço que cada decisão carrega complexidades e tradeoffs que devem ser bem compreendidos para garantir manutenção e evolução saudáveis do projeto.
