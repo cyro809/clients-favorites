@@ -37,15 +37,13 @@ O projeto já vem com um `docker-compose.yml` que orquestra:
 
 ## ✅ Variáveis de Ambiente
 
-As principais configurações estão definidas diretamente no `docker-compose.yml`.  
+As principais configurações estão definidas diretamente no `.env`.  
 A variável mais importante é:
 
 | Variável | Valor |
 |---|---|
 | `DATABASE_URL` | `postgresql+psycopg2://postgres:postgres@db:5432/client_favorites` |
 | `SECRET_KEY` | `super-secret` |
-
-Se quiser, pode criar um `.env` no futuro para parametrizar.
 
 ---
 
