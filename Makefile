@@ -21,3 +21,6 @@ migrate:
 
 migrations:
 	docker-compose exec api alembic upgrade head
+
+logs:
+	docker-compose logs -f api
