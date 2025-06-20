@@ -9,8 +9,7 @@ class ClientBase(BaseModel):
 class ClientCreateInput(ClientBase):
     password: str
 
-class ClientInDatabase(ClientCreateInput):
-    id: int
+class ClientInputDatabase(ClientBase):
     hashed_password: str
 
 class ClientUpdateInput(BaseModel):
