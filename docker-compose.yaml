@@ -20,9 +20,6 @@ services:
       - .:/app
     ports:
       - "8000:8000"
-    environment:
-      DATABASE_URL: postgresql+psycopg2://postgres:postgres@db:5432/client_favorites
-      SECRET_KEY: super-secret
     depends_on:
       - db
 
