@@ -1,7 +1,7 @@
 
 # API - Instruções de Uso
 
-Este documento explica como utilizar as principais rotas da API para gerenciamento de clientes e favoritos.
+Este documento explica como utilizar as principais rotas da API para gerenciamento de clientes e favoritos. Caso tenha o postman e prefira, existe uma collection no arquivo 'client-favorites-api.postman_collection.json' com todos as rotas e exemplos configurados.
 
 ---
 

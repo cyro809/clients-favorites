@@ -5,12 +5,12 @@ from app.core.database import get_db
 from app.models.client import Client
 from app.core import security
 from app.schemas.token import Token
-from app.schemas.client import ClientCreateInput, ClientBase, ClientInputDatabase
+from app.schemas.client import ClientCreateInput, ClientOutput, ClientInputDatabase
 from app.repository import client as client_repository
 
 router = APIRouter()
 
-@router.post("/signup", response_model=ClientBase, status_code=201)
+@router.post("/signup", response_model=ClientOutput, status_code=201)
 async def signup(client_input: ClientCreateInput, db: AsyncSession = Depends(get_db)):
     db_client = await client_repository.get_client_by_email(db, client_input.email)
     if db_client:
