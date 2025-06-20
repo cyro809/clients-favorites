@@ -24,3 +24,11 @@ migrations:
 
 logs:
 	docker-compose logs -f api
+	
+test:
+	ENV_FILE=.env.test docker-compose exec api pytest tests
+
+services/test:
+	docker-compose exec db psql -U postgres -c "CREATE DATABASE client_favorites_test;"
+	ENV_FILE=.env.test docker-compose exec api alembic upgrade head
+	test

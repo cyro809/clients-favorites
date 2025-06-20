@@ -9,3 +9,8 @@ requests==2.31.0
 passlib[bcrypt]==1.7.4
 asyncpg==0.29.0
 aiohttp
+pytest
+pytest-asyncio
+pytest-env
+httpx
+dotenv
